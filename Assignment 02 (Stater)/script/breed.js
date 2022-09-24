@@ -8,7 +8,8 @@ const btnSubmit = document.getElementById("submit-btn");
 const bodyContent = document.getElementById("tbody");
 
 // Mảng breed
-const arrBreeds = JSON.parse(getFromStorage("arrBreeds"));
+let arrBreeds = JSON.parse(getFromStorage("arrBreeds"));
+arrBreeds==null?arrBreeds=[]:{};
 //-----KHAI BÁO CÁC PHƯƠNG THỨC-----//
 
 //ValidateInput

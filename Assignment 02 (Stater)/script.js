@@ -25,13 +25,13 @@ const addNewPet = function () {
     dewormed: isDewormed.checked,
     sterlilized: isSterilized.checked,
     bmi: "?",
-    date: `${new Date().getDay()}/${new Date().getMonth()}/${new Date().getFullYear()}`,
+    date: `${new Date().getDate()}/${new Date().getMonth()}/${new Date().getFullYear()}`,
   };
+  console.log(pet.date);
   addNew(pet, arrPets, "arrPets", 1);
 };
 
 //----KHAI BÁO CÁC SỰ KIỆN----
-
 //Sự kiện nút Submit
 btnSubmit.addEventListener("click", addNewPet);
 
@@ -75,7 +75,7 @@ btnBMI.addEventListener("click", () => {
   saveToStorage("arrPets", JSON.stringify(arrPets));
   RenderTable(arrPets, 1);
 });
-
+getBreedsFromTypePet(petType.value);
 //Sự kiện khi load trang
 window.addEventListener("load", loadPages(arrPets, 1));
 //Sự kiện Chọn Loại thú cưng

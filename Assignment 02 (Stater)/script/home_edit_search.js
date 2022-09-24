@@ -15,7 +15,8 @@ const bodyContent = document.getElementById("tbody");
 const btnSubmit = document.getElementById("submit-btn");
 
 //Mảng arrPet lưu trữ các thú cưng lấy từ Storage
-const arrPets = JSON.parse(getFromStorage("arrPets"));
+let arrPets = JSON.parse(getFromStorage("arrPets"));
+arrPets==null?arrPets = []:{};
 //Lấy data Breed từ loại thú cưng
 function getBreedsFromTypePet(typePet) {
   petBreed.innerHTML = "<option>Select Breed</option>";
